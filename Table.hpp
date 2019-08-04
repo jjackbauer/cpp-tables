@@ -19,7 +19,7 @@ class table
 		std::map<long long int,char> alignment;
 
 	public:
-		table(char h='-',char v='|',char c='=');
+		table(char h='-',char v='|',char c='+');
 		std::string & toString();
 		std::ofstream & toFile(std::string filename);
 
