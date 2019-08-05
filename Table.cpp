@@ -39,9 +39,9 @@ int	 Table::getWidht(long long int column)
 }
 std::string & Table::toString()
 {
-
+	//to do
 }
 void Table::toFile(std::string filename)
 {
-
+	//to do
 }
