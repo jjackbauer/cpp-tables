@@ -8,21 +8,27 @@
 #include <map>
 typedef std::vector <std::string> row;
 
-class table
+class Table
 {
 	private:
 		char horizontalDelimiter;
 		char verticalDelimiter;
 		char cornerDelimiter;
+		row currentRow;
 		std::vector<row> rows;
-		std::vector<int> widht;
+		std::vector<int> widhts;
 		std::map<long long int,char> alignment;
+		void setAlignment(long long int cell, char type);
+		char getAlignment(long long int cell);
+		void setWidht(long long int column,int widht);
+		int	 getWidht(long long int column);
 
 	public:
-		table(char h='-',char v='|',char c='+');
+		Table(char h='-',char v='|',char c='+');
+		void add(std::string cellValue);
+		void endRow(void);
 		std::string & toString();
-		std::ofstream & toFile(std::string filename);
-
+		void toFile(std::string filename);
 };
 
 #endif /* TABLE_HPP_ */
